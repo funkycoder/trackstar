@@ -1,0 +1,882 @@
+2013/08/29 03:06:33 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_project' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text NOT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE=InnoDB
+2013/08/29 03:06:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "ENGINE": syntax error. The SQL statement executed was: CREATE TABLE 'tbl_project' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text NOT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE=InnoDB.
+2013/08/29 03:06:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "ENGINE": syntax error. The SQL statement executed was: CREATE TABLE 'tbl_project' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text NOT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE=InnoDB' in C:\xampp\htdocs\YiiRoot\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\db\CDbCommand.php(1251): CDbCommand->execute()
+#1 C:\xampp\htdocs\YiiRoot\framework\db\CDbMigration.php(229): CDbCommand->createTable('tbl_project', Array, 'ENGINE=InnoDB')
+#2 C:\xampp\htdocs\TrackStar\protected\migrations\m130829_010524_create_project_table.php(15): CDbMigration->createTable('tbl_project', Array, 'ENGINE=InnoDB')
+#3 C:\xampp\htdocs\YiiRoot\framework\cli\commands\MigrateCommand.php(386): m130829_010524_create_project_table->up()
+#4 C:\xampp\htdocs\YiiRoot\framework\cli\commands\MigrateCommand.php(110): MigrateCommand->migrateUp('m130829_010524_...')
+#5 [internal function]: MigrateCommand->actionUp(Array)
+#6 C:\xampp\htdocs\YiiRoot\framework\console\CConsoleCommand.php(173): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#7 C:\xampp\htdocs\YiiRoot\framework\console\CConsoleCommandRunner.php(68): CConsoleCommand->run(Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#9 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CConsoleApplication->processRequest()
+#10 C:\xampp\htdocs\YiiRoot\framework\yiic.php(34): CApplication->run()
+#11 C:\xampp\htdocs\TrackStar\protected\yiic.php(7): require_once('C:\xampp\htdocs...')
+#12 {main}
+---
+2013/08/29 03:09:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('project/admin')
+#9 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/TrackStar/index.php?r=project/admin
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=project/index
+---
+2013/08/30 16:38:08 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_issue' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text,
+	"project_id" int(11) DEFAULT NULL,
+	"type_id" int(11) DEFAULT NULL,
+	"status_id" int(11) DEFAULT NULL,
+	"owner_id" int(11) DEFAULT NULL,
+	"requester_id" int(11) DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE=InnoDB
+2013/08/30 16:38:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "ENGINE": syntax error. The SQL statement executed was: CREATE TABLE 'tbl_issue' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text,
+	"project_id" int(11) DEFAULT NULL,
+	"type_id" int(11) DEFAULT NULL,
+	"status_id" int(11) DEFAULT NULL,
+	"owner_id" int(11) DEFAULT NULL,
+	"requester_id" int(11) DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE=InnoDB.
+2013/08/30 16:38:44 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_issue' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text,
+	"project_id" int(11) DEFAULT NULL,
+	"type_id" int(11) DEFAULT NULL,
+	"status_id" int(11) DEFAULT NULL,
+	"owner_id" int(11) DEFAULT NULL,
+	"requester_id" int(11) DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE= InnoDB
+2013/08/30 16:38:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "ENGINE": syntax error. The SQL statement executed was: CREATE TABLE 'tbl_issue' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text,
+	"project_id" int(11) DEFAULT NULL,
+	"type_id" int(11) DEFAULT NULL,
+	"status_id" int(11) DEFAULT NULL,
+	"owner_id" int(11) DEFAULT NULL,
+	"requester_id" int(11) DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE= InnoDB.
+2013/08/30 16:40:04 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_issue' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text,
+	"project_id" int(11) DEFAULT NULL,
+	"type_id" int(11) DEFAULT NULL,
+	"status_id" int(11) DEFAULT NULL,
+	"owner_id" int(11) DEFAULT NULL,
+	"requester_id" int(11) DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE= InnoDB
+2013/08/30 16:40:04 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "ENGINE": syntax error. The SQL statement executed was: CREATE TABLE 'tbl_issue' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"name" varchar(255) NOT NULL,
+	"description" text,
+	"project_id" int(11) DEFAULT NULL,
+	"type_id" int(11) DEFAULT NULL,
+	"status_id" int(11) DEFAULT NULL,
+	"owner_id" int(11) DEFAULT NULL,
+	"requester_id" int(11) DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+) ENGINE= InnoDB.
+2013/08/30 16:41:14 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/30 16:41:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/30 16:43:18 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/30 16:43:18 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/30 16:45:48 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/30 16:45:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/30 17:01:05 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/30 17:01:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/30 17:01:50 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/30 17:01:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/30 17:11:15 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/30 17:11:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/30 17:19:25 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/30 17:19:25 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/31 01:24:30 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/31 01:24:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/31 03:19:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/admin')
+#9 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/admin
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/index
+---
+2013/08/31 03:21:26 [error] [system.db.CDbCommand] Error in preparing SQL: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+)
+2013/08/31 03:21:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 table 'tbl_user' already exists. The SQL statement executed was: CREATE TABLE 'tbl_user' (
+	"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	"username" varchar(255) NOT NULL,
+	"email" varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	"last_login_time" datetime DEFAULT NULL,
+	"create_time" datetime DEFAULT NULL,
+	"create_user_id" int(11) DEFAULT NULL,
+	"update_time" datetime DEFAULT NULL,
+	"update_user_id" int(11) DEFAULT NULL
+).
+2013/08/31 12:34:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:172
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=site/login
+---
+2013/08/31 12:37:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:172
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create
+---
+2013/08/31 12:38:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:172
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue
+---
+2013/08/31 12:38:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The request project does not exist.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:188
+Stack trace:
+#0 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(170): IssueController->loadProject('1')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#11 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create&pid=1
+---
+2013/08/31 12:38:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The request project does not exist.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:188
+Stack trace:
+#0 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(170): IssueController->loadProject('2')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#11 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create&pid=2
+---
+2013/09/01 20:38:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:172
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=site/login
+---
+2013/09/01 20:38:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The request project does not exist.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:188
+Stack trace:
+#0 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(170): IssueController->loadProject('1')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#11 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create&pid=1
+---
+2013/09/01 20:39:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The request project does not exist.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:188
+Stack trace:
+#0 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(170): IssueController->loadProject('2')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#11 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create&pid=2
+---
+2013/09/01 20:39:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:172
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue&pid=1
+---
+2013/09/01 21:08:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('project/admin')
+#9 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/TrackStar/index.php?r=project/admin
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=project/index
+---
+2013/09/01 22:03:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:173
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue
+---
+2013/09/01 22:03:42 [error] [exception.CDbException] exception 'CDbException' with message 'The relation "users" in active record class "User" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' in C:\xampp\htdocs\YiiRoot\framework\db\ar\CActiveRecord.php:2265
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\db\ar\CActiveRecord.php(2242): CManyManyRelation->initJunctionData()
+#1 C:\xampp\htdocs\YiiRoot\framework\db\ar\CActiveFinder.php(531): CManyManyRelation->getJunctionTableName()
+#2 C:\xampp\htdocs\YiiRoot\framework\db\ar\CActiveFinder.php(492): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Project))
+#3 C:\xampp\htdocs\YiiRoot\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Project))
+#4 C:\xampp\htdocs\YiiRoot\framework\db\ar\CActiveRecord.php(273): CActiveFinder->lazyFind(Object(Project))
+#5 C:\xampp\htdocs\YiiRoot\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('users')
+#6 C:\xampp\htdocs\TrackStar\protected\models\Project.php(109): CActiveRecord->__get('users')
+#7 C:\xampp\htdocs\TrackStar\protected\views\issue\_form.php(52): Project->getUserOptions()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\TrackStar\protected\views\issue\create.php(18): CController->renderPartial('_form', Array)
+#12 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#13 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#16 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(78): CController->render('create', Array)
+#17 C:\xampp\htdocs\YiiRoot\framework\web\actions\CInlineAction.php(50): IssueController->actionCreate()
+#18 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(175): CFilterChain->run()
+#21 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#22 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#24 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#26 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#27 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#28 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('create')
+#30 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/create')
+#31 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#33 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/create&pid=1
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=project/view&id=1
+---
+2013/09/02 06:15:58 [error] [php] include(cActiveDataProvider.php): failed to open stream: No such file or directory (C:\xampp\htdocs\YiiRoot\framework\YiiBase.php:423)
+Stack trace:
+#0 C:\xampp\htdocs\TrackStar\protected\controllers\ProjectController.php(51): spl_autoload_call()
+#1 unknown(0): ProjectController->actionView()
+#2 C:\xampp\htdocs\YiiRoot\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(134): ProjectController->runAction()
+#6 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): ProjectController->filterAccessControl()
+#9 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): ProjectController->runActionWithFilters()
+#12 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): ProjectController->run()
+#13 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#14 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\TrackStar\index.php(13): CWebApplication->run()
+REQUEST_URI=/TrackStar/index.php?r=project/view&id=1
+in C:\xampp\htdocs\TrackStar\protected\controllers\ProjectController.php (51)
+in C:\xampp\htdocs\TrackStar\index.php (13)
+2013/09/02 07:04:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('admin')
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/admin')
+#9 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/admin&pid=1
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/view&id=1
+---
+2013/09/02 07:05:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:181
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('admin')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/admin')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/admin
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/index&pid=1
+---
+2013/09/02 07:05:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:181
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/admin&pid=1
+---
+2013/09/02 07:06:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:181
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/admin&pid=1
+---
+2013/09/02 07:10:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:181
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/admin&pid=1
+---
+2013/09/02 07:11:33 [error] [php] Undefined variable: model (C:\xampp\htdocs\TrackStar\protected\views\issue\index.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(870): IssueController->renderFile()
+#1 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(783): IssueController->renderPartial()
+#2 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(129): IssueController->render()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\actions\CInlineAction.php(50): IssueController->actionIndex()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(134): IssueController->runAction()
+#6 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(183): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterAccessControl()
+#12 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#13 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): IssueController->runActionWithFilters()
+#15 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): IssueController->run()
+#16 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#17 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\TrackStar\index.php(13): CWebApplication->run()
+REQUEST_URI=/TrackStar/index.php?r=issue/index&pid=1
+in C:\xampp\htdocs\TrackStar\protected\views\issue\index.php (10)
+in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php (129)
+in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php (183)
+2013/09/02 07:20:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:181
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index
+---
+2013/09/02 07:20:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:181
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/view&id=1
+---
+2013/09/02 07:23:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Must specify project before peforming this action.' in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:181
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#1 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#10 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/admin&pid=1
+---
+2013/09/02 07:34:09 [error] [php] Undefined variable: model (C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php:129)
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(134): IssueController->runAction()
+#1 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(184): CFilterChain->run()
+#2 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterAccessControl()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): IssueController->runActionWithFilters()
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): IssueController->run()
+#11 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#12 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\TrackStar\index.php(13): CWebApplication->run()
+REQUEST_URI=/TrackStar/index.php?r=issue/index&pid=1
+in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php (129)
+in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php (184)
+in C:\xampp\htdocs\TrackStar\index.php (13)
+2013/09/02 07:35:46 [error] [exception.CException] exception 'CException' with message 'Property "IssueController._project" is not defined.' in C:\xampp\htdocs\YiiRoot\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\TrackStar\protected\views\issue\index.php(13): CComponent->__get('_project')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(130): CController->render('index', Array)
+#6 C:\xampp\htdocs\YiiRoot\framework\web\actions\CInlineAction.php(50): IssueController->actionIndex()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(184): CFilterChain->run()
+#10 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#11 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#19 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#20 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index&pid=1
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/admin&pid=1
+---
+2013/09/02 07:36:22 [error] [exception.CException] exception 'CException' with message 'Property "IssueController._project" is not defined.' in C:\xampp\htdocs\YiiRoot\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\TrackStar\protected\views\issue\index.php(13): CComponent->__get('_project')
+#1 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(127): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\YiiRoot\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(870): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#5 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(130): CController->render('index', Array)
+#6 C:\xampp\htdocs\YiiRoot\framework\web\actions\CInlineAction.php(50): IssueController->actionIndex()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(184): CFilterChain->run()
+#10 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext(Object(CFilterChain))
+#11 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): CController->run('index')
+#19 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController('issue/index')
+#20 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\TrackStar\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/TrackStar/index.php?r=issue/index&pid=1
+HTTP_REFERER=http://localhost/TrackStar/index.php?r=issue/view&id=1
+---
+2013/09/02 07:37:35 [error] [php] Undefined variable: projectId (C:\xampp\htdocs\TrackStar\protected\views\issue\index.php:13)
+Stack trace:
+#0 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(870): IssueController->renderFile()
+#1 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(783): IssueController->renderPartial()
+#2 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(130): IssueController->render()
+#3 C:\xampp\htdocs\YiiRoot\framework\web\actions\CInlineAction.php(50): IssueController->actionIndex()
+#4 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(134): IssueController->runAction()
+#6 C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php(184): CFilterChain->run()
+#7 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterProjectContext()
+#8 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#10 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\YiiRoot\framework\web\filters\CInlineFilter.php(59): IssueController->filterAccessControl()
+#12 C:\xampp\htdocs\YiiRoot\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#13 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\xampp\htdocs\YiiRoot\framework\web\CController.php(266): IssueController->runActionWithFilters()
+#15 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(283): IssueController->run()
+#16 C:\xampp\htdocs\YiiRoot\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#17 C:\xampp\htdocs\YiiRoot\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\TrackStar\index.php(13): CWebApplication->run()
+REQUEST_URI=/TrackStar/index.php?r=issue/index&pid=1
+in C:\xampp\htdocs\TrackStar\protected\views\issue\index.php (13)
+in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php (130)
+in C:\xampp\htdocs\TrackStar\protected\controllers\IssueController.php (184)
